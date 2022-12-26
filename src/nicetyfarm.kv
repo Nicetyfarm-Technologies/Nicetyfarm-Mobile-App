@@ -20,27 +20,33 @@
     Button:
         text:"Login with facebook"
         color: 0, 0, 0 ,1
-        size_hint: 0.7, 0.1
+        size_hint: 0.7, 0.08
         pos_hint: {"top":0.6, "x":0.15}
 
-    # Label:
-    #     text:"Name"
-    #     pos_hint: {"top":0.96}
+    Label:
+        text:"Email:"
+        pos_hint: {"top":0.98, "x":-0.30}
 
     TextInput:
         # text: "Name"
         hint: "Name"
         multiline: False
-        size_hint: 0.7, 0.1
+        size_hint: 0.7, 0.08
         pos_hint: {"top":0.45, "x":0.15}
+        id: "name"
+
+    Label:
+        text:"Password:"
+        pos_hint: {"top":0.83, "x":-0.27}
     
     TextInput:
         multiline: False
-        size_hint: 0.7, 0.1
+        size_hint: 0.7, 0.08
         pos_hint: {"top":0.3, "x":0.15}
+        id: "phone"
 
     Button:
         text:"Login"
         color: 0, 0, 0 ,1
-        size_hint: 0.7, 0.1
+        size_hint: 0.7, 0.08
         pos_hint: {"top":0.15, "x":0.15}
