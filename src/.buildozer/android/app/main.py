@@ -1,16 +1,15 @@
 import kivy
 from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.gridlayout import GridLayout
+from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.textinput import TextInput
 
-kivy.require('1.9.0')
-
-
+# kivy.require('1.9.0')
+    
+        
 class Nicetyfarm(App):
 
     def build(self):
-        return BoxLayout()
+        return FloatLayout()
 
 
 if __name__ == "__main__":

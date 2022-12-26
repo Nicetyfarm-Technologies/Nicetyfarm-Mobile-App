@@ -1,14 +1,46 @@
 #:kivy 1.9
-<BoxLayout>:
-    orientation: 'vertical'    
+<FloatLayout>:
+    canvas.before:
+        Color:
+            rgba: 0.15, 0.57, 0.14, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    background_color: 0.3, 0.8, 0, 1
     Label:
-        text: "Nicetyfarm"
-        font_size: 64
-        color: 0.94, 0.45, 0
-    Label:
-        text: " "
-        font_size: 64
-    # Button:
-    #     text: "Randomize"
-    #     font_size: 32
-    #     size: 50, 20
+        text: "Welcome To Nicetyfarm"
+        pos_hint: {"top":1.4}
+
+    Image:
+        pos_hint: {"top":1.05, "x":0.35}
+        size_hint: 0.3, 0.6
+        source: "nicetyfarm.png"
+
+    Button:
+        text:"Login with facebook"
+        color: 0, 0, 0 ,1
+        size_hint: 0.7, 0.1
+        pos_hint: {"top":0.6, "x":0.15}
+
+    # Label:
+    #     text:"Name"
+    #     pos_hint: {"top":0.96}
+
+    TextInput:
+        # text: "Name"
+        hint: "Name"
+        multiline: False
+        size_hint: 0.7, 0.1
+        pos_hint: {"top":0.45, "x":0.15}
+    
+    TextInput:
+        multiline: False
+        size_hint: 0.7, 0.1
+        pos_hint: {"top":0.3, "x":0.15}
+
+    Button:
+        text:"Login"
+        color: 0, 0, 0 ,1
+        size_hint: 0.7, 0.1
+        pos_hint: {"top":0.15, "x":0.15}
