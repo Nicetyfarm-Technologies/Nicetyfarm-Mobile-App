@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Nicetyfarm</string>
-    <string name="private_version">01fd670b074592fba2e7025a47a64aaf5415fd02</string>
+    <string name="private_version">aff00b9aa0d064482c7e53f85ab799496feb22d8</string>
     <string name="presplash_color">#000000</string>
     <string name="urlScheme">kivy</string>
 </resources>

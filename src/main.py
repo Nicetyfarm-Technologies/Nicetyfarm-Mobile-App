@@ -1,25 +1,36 @@
 import kivy
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.textinput import TextInput
-from kivy.properties import ObjectProperty
+from kivy.lang import Builder
+from kivy.uix.widget import Widget
+from kivy.uix.screenmanager import ScreenManager, Screen
 
 # kivy.require('1.9.0')
+
+
+class LoginScreen(Screen):
+    pass
+
+        
+class DashboardScreen(Screen):
+    pass
+
+
+class ScanCropScreen(Screen):
+    pass
+
+
+class WindowManager(ScreenManager):
+    pass
+
+kv = Builder.load_file('nicetyfarm.kv')
    
         
-class Nicetyfarm(App):
-    
-    name = ObjectProperty(None)
-    phone = ObjectProperty(None)
-    
-    def btn (self):
-        name = self.name.text
-        phone = self.phone.text
-        # print("Name:" self.name, "Phone:" self.phone)
+class NicetyfarmMainApp(App):
 
     def build(self):
-        return FloatLayout()
+        return kv
 
 
 if __name__ == "__main__":
-    Nicetyfarm().run()
+    NicetyfarmMainApp().run()
