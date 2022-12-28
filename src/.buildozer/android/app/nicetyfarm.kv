@@ -118,42 +118,70 @@ WindowManager:
                     text: "Mazabuka"
                     color: "black"
 
+        GridLayout:
+            cols: 2
+            
+            Button:
+                text: "Temperature"
+                background_color: "blue"
+
+            Button:
+                text: "Humidity"
+                background_color: "blue"
+
+            Button:
+                text: "Windspeed"
+                background_color: "blue"
+
+            Button:
+                text: "Rainfall"
+                background_color: "blue"
+
+
+        Button:
+            text: "Scan crop with camera"
+            background_color: "green"
+            size_hint: 0.3, 0.48
 
         GridLayout
             cols:2
-            Image:
-                # pos: 20, 20
-                size: 0.6, 0.6
-                source: "menu.png"
+            Button:
+                text: "Crop Scan"
 
-            Image:
-                # pos_hint: {"top":0.05, "x":0.35}
-                size: 20, 20
-                source: "notification.png"
+            Button:
+                text: "Crop Servicing"
 
         GridLayout
             cols:2
-            Image:
-                # pos: 20, 20
-                size: 0.6, 0.6
-                source: "menu.png"
+            Button:
+                text: "Soil Scan"
 
-            Image:
-                # pos_hint: {"top":0.05, "x":0.35}
-                size: 20, 20
-                source: "notification.png"
+            Button:
+                text: "Smart Water"
 
         GridLayout
             cols:2
-            Image:
-                # pos: 20, 20
-                size: 0.6, 0.6
-                source: "menu.png"
+            Button:
+                text: "Agro Shop"
 
-            Image:
-                # pos_hint: {"top":0.05, "x":0.35}
-                size: 20, 20
-                source: "notification.png"
+            Button:
+                text: "Marketplace"
+
+        GridLayout
+            cols:2
+            Button:
+                text: "Farm Security"
+
+            Button:
+                text: "Knowledge Center"
+
+        GridLayout
+            cols:2
+            Button:
+                text: "Animal Scan"
+
+            Button:
+                text: "Animal Servicing"
 
 
 <ScanCropScreen>:
