@@ -12,6 +12,10 @@ from kivy.uix.button import Button
 class LoginScreen(Screen):
     pass
 
+
+class SignupScreen(Screen):
+    pass
+
         
 class DashboardScreen(Screen):
     pass

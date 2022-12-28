@@ -1,11 +1,12 @@
 #:kivy 1.9
 WindowManager:
     LoginScreen:
+    SignupScreen:
     DashboardScreen:
     ScanCropScreen:
 
 <LoginScreen>:
-    name: "Loginpage"
+    name: "LoginPage"
 
     FloatLayout:
         size: root.width, root.height
@@ -63,11 +64,82 @@ WindowManager:
             background_color: "blue"
             # on_press: root.login()
             on_release: app.root.current = "DashboardPage"
+            
+            # background_color: "none"
+
+        Button:
+            text:"Have no account? REGISTER"
+            pos_hint: {"top":0.08, "x":0.2}
+            color: 0.93, 0.83, 0.1, 1
+            size_hint: 0.6, 0.06
+            on_release: app.root.current = "SignupPage"
+
+<SignupScreen>:
+    name: "SignupPage"
+
+    FloatLayout:
+        size: root.width, root.height
+        canvas.before:
+            Color:
+                rgba: 0.15, 0.57, 0.14, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        background_color: 0.3, 0.8, 0, 1
+        Label:
+            text: "Welcome To Nicetyfarm"
+            pos_hint: {"top":1.4}
+
+        Image:
+            pos_hint: {"top":1.05, "x":0.35}
+            size_hint: 0.3, 0.6
+            source: "nicetyfarm.png"
+
+        Button:
+            text:"SignUp with facebook"
+            color: 1, 1, 1 ,1
+            size_hint: 0.8, 0.08
+            pos_hint: {"top":0.6, "x":0.1}
+            background_color: 0, 0, 0, 1
 
         Label:
-            text:"Have no account? REGISTER"
-            pos_hint: {"top":0.55}
+            text:"Phone Number:"
+            pos_hint: {"top":0.98, "x":-0.24}
+
+        TextInput:
+            multiline: False
+            size_hint: 0.8, 0.08
+            pos_hint: {"top":0.45, "x":0.1}
+            id: phone
+
+        Label:
+            text:"Password:"
+            pos_hint: {"top":0.83, "x":-0.27}
+        
+        TextInput:
+            multiline: False
+            size_hint: 0.8, 0.08
+            pos_hint: {"top":0.3, "x":0.1}
+            id: password
+            border: 30, 30, 30, 30
+
+        Button:
+            id: SignupBtn
+            text:"SignUp"
+            color: 1, 1, 1 ,1
+            size_hint: 0.8, 0.08
+            pos_hint: {"top":0.17, "x":0.1}
+            background_color: "blue"
+            # on_press: root.login()
+            on_release: app.root.current = "DashboardPage"
+
+        Button:
+            text:"Already Have An account? LOGIN"
+            pos_hint: {"top":0.08, "x":0.15}
             color: 0.93, 0.83, 0.1, 1
+            size_hint: 0.7, 0.06
+            on_release: app.root.current = "LoginPage"
 
 
 <DashboardScreen>:
