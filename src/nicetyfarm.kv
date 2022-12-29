@@ -69,9 +69,9 @@ WindowManager:
 
         Button:
             text:"Have no account? REGISTER"
-            pos_hint: {"top":0.08, "x":0.2}
+            pos_hint: {"top":0.08, "x":0.15}
             color: 0.93, 0.83, 0.1, 1
-            size_hint: 0.6, 0.06
+            size_hint: 0.7, 0.06
             on_release: app.root.current = "SignupPage"
 
 <SignupScreen>:
@@ -136,9 +136,9 @@ WindowManager:
 
         Button:
             text:"Already Have An account? LOGIN"
-            pos_hint: {"top":0.08, "x":0.15}
+            pos_hint: {"top":0.08, "x":0.1}
             color: 0.93, 0.83, 0.1, 1
-            size_hint: 0.7, 0.06
+            size_hint: 0.8, 0.06
             on_release: app.root.current = "LoginPage"
 
 
@@ -222,8 +222,8 @@ WindowManager:
                 margin: 10
                 text: "Scan crop with camera"
                 background_color: 0.15, 0.57, 0.14, 1
-                size_hint: 0.5, 0.7
-                pos_hint: {"x": 0.25, "y": 0.2}
+                size_hint: 0.7, 0.7
+                pos_hint: {"x": 0.15, "y": 0.2}
                 on_release: 
                     app.root.current = "ScanCropPage"
                     root.manager.transition.direction = "left"
@@ -297,3 +297,15 @@ WindowManager:
         on_release: 
             app.root.current = "DashboardPage"
             root.manager.transition.direction = "right"
+
+    Button:
+        text: "Open Camera"
+        size_hint: 0.5, 0.06
+        pos_hint: {"x":0.25, "top":0.2}
+
+
+
+    Button:
+        text: "Diagnose"
+        size_hint: 0.5, 0.06
+        pos_hint: {"x":0.25, "top":0.1}
