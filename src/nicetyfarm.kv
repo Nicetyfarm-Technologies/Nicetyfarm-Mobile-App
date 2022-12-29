@@ -144,10 +144,10 @@ WindowManager:
 
 <DashboardScreen>:
     name: "DashboardPage"
-    pos_hint: {"top":1}
+    padding: 10
     canvas.before:
         Color:
-            rgba: 0.15, 0.57, 0.14, 1
+            rgba: 1, 1, 1, 1
         Rectangle:
             pos: self.pos
             size: self.size
@@ -156,13 +156,17 @@ WindowManager:
         # Rectangle:
         #     pos: self.pos
         #     size: self.width, self.height /4
+        
     GridLayout:
         cols:1
+        padding: 20
         FloatLayout:
             # cols:2
+            # padding: 50
             Image:
+                padding:20
                 pos_hint: {"top":1, "x":-0.35}
-                size: 0.2, 0.2
+                size: 0.1, 0.1
                 source: "menu.png"
 
             Image:
@@ -170,28 +174,31 @@ WindowManager:
                 size: 3, 2
                 source: "notification.png"
 
-        GridLayout
-            cols:2
+        FloatLayout:
+            # cols:2
             Label:
                 text: "Hello, John"
                 color: "black"
-                # pos: 20, 20
+                pos_hint: {"top":1, "x":-0.35}
                 # size: 0.6, 0.6
                 # source: "menu.png"
 
-            GridLayout:
-                cols:2
-                Image:
-                    # pos_hint: {"top":0.05, "x":0.35}
-                    size: 20, 20
-                    source: "location.png"
+            # FloatLayout:
+            #     # cols:2
+            #     Image:
+            #         pos_hint: {"top":0.9, "x":0.35}
+            #         size: 20, 20
+            #         source: "location.png"
 
-                Label:
-                    text: "Mazabuka"
-                    color: "black"
+            #     Label:
+            #         text: "Mazabuka"
+            #         color: "black"
+            #         pos_hint: {"top":0.9, "x":0.35}
 
         GridLayout:
             cols: 2
+            padding: 30, 0
+            background_color: "white"
             
             Button:
                 text: "Temperature"
@@ -209,17 +216,22 @@ WindowManager:
                 text: "Rainfall"
                 background_color: "black"
 
-
-        Button:
-            text: "Scan crop with camera"
-            background_color: 0.15, 0.57, 0.14, 1
-            size_hint: 0.3, 0.48
-            on_release: 
-                app.root.current = "ScanCropPage"
-                root.manager.transition.direction = "left"
+        FloatLayout:
+            padding: 15, 30
+            Button:
+                margin: 10
+                text: "Scan crop with camera"
+                background_color: 0.15, 0.57, 0.14, 1
+                size_hint: 0.5, 0.7
+                pos_hint: {"x": 0.25, "y": 0.2}
+                on_release: 
+                    app.root.current = "ScanCropPage"
+                    root.manager.transition.direction = "left"
 
         GridLayout
             cols:2
+            # padding: 10
+            gap:10
             Button:
                 text: "Crop Scan"
                 background_color: "black"
