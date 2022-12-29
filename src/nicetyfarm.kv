@@ -61,7 +61,7 @@ WindowManager:
             color: 1, 1, 1 ,1
             size_hint: 0.8, 0.08
             pos_hint: {"top":0.17, "x":0.1}
-            background_color: "blue"
+            background_color: "black"
             # on_press: root.login()
             on_release: app.root.current = "DashboardPage"
             
@@ -130,7 +130,7 @@ WindowManager:
             color: 1, 1, 1 ,1
             size_hint: 0.8, 0.08
             pos_hint: {"top":0.17, "x":0.1}
-            background_color: "blue"
+            background_color: "black"
             # on_press: root.login()
             on_release: app.root.current = "DashboardPage"
 
@@ -147,7 +147,7 @@ WindowManager:
     pos_hint: {"top":1}
     canvas.before:
         Color:
-            rgba: 1, 1, 1, 1
+            rgba: 0.15, 0.57, 0.14, 1
         Rectangle:
             pos: self.pos
             size: self.size
@@ -158,16 +158,16 @@ WindowManager:
         #     size: self.width, self.height /4
     GridLayout:
         cols:1
-        GridLayout
-            cols:2
+        FloatLayout:
+            # cols:2
             Image:
-                # pos: 20, 20
-                size: 0.6, 0.6
+                pos_hint: {"top":1, "x":-0.35}
+                size: 0.2, 0.2
                 source: "menu.png"
 
             Image:
-                # pos_hint: {"top":0.05, "x":0.35}
-                size: 20, 20
+                pos_hint: {"y":0, "x":0.35}
+                size: 3, 2
                 source: "notification.png"
 
         GridLayout
@@ -195,69 +195,93 @@ WindowManager:
             
             Button:
                 text: "Temperature"
-                background_color: "blue"
+                background_color: "black"
 
             Button:
                 text: "Humidity"
-                background_color: "blue"
+                background_color: "black"
 
             Button:
                 text: "Windspeed"
-                background_color: "blue"
+                background_color: "black"
 
             Button:
                 text: "Rainfall"
-                background_color: "blue"
+                background_color: "black"
 
 
         Button:
             text: "Scan crop with camera"
-            background_color: "green"
+            background_color: 0.15, 0.57, 0.14, 1
             size_hint: 0.3, 0.48
+            on_release: 
+                app.root.current = "ScanCropPage"
+                root.manager.transition.direction = "left"
 
         GridLayout
             cols:2
             Button:
                 text: "Crop Scan"
+                background_color: "black"
 
             Button:
                 text: "Crop Servicing"
+                background_color: "black"
 
         GridLayout
             cols:2
             Button:
                 text: "Soil Scan"
+                background_color: "black"
 
             Button:
                 text: "Smart Water"
+                background_color: "black"
 
         GridLayout
             cols:2
             Button:
                 text: "Agro Shop"
+                background_color: "black"
 
             Button:
                 text: "Marketplace"
+                background_color: "black"
 
         GridLayout
             cols:2
             Button:
                 text: "Farm Security"
+                background_color: "black"
 
             Button:
                 text: "Knowledge Center"
+                background_color: "black"
 
         GridLayout
             cols:2
             Button:
                 text: "Animal Scan"
+                background_color: "black"
 
             Button:
                 text: "Animal Servicing"
+                background_color: "black"
 
 
 <ScanCropScreen>:
     name: "ScanCropPage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
     Button:
-        text: "Scan Crop"
-        on_release: app.root.current = "LoginPage"
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "DashboardPage"
+            root.manager.transition.direction = "right"
