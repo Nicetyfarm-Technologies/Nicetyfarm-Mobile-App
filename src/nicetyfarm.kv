@@ -4,6 +4,17 @@ WindowManager:
     SignupScreen:
     DashboardScreen:
     ScanCropScreen:
+    ScanCropResultsScreen:
+    CropScanScreen:
+    CropServicingScreen:
+    SoilScanScreen:
+    SmartWaterScreen:
+    AgroShopScreen:
+    MarketPlaceScreen:
+    FarmSecurityScreen:
+    KnowledgeBaseScreen:
+    AnimalScanScreen:
+    AnimalServicingScreen:
 
 <LoginScreen>:
     name: "LoginPage"
@@ -93,7 +104,7 @@ WindowManager:
             pos_hint: {"top":1.4}
 
         Image:
-            pos_hint: {"top":1.05, "x":0.35}
+            pos_hint: {"top":1.25, "x":0.35}
             size_hint: 0.3, 0.6
             source: "nicetyfarm.png"
 
@@ -101,22 +112,42 @@ WindowManager:
             text:"SignUp with facebook"
             color: 1, 1, 1 ,1
             size_hint: 0.8, 0.08
-            pos_hint: {"top":0.6, "x":0.1}
+            pos_hint: {"top":0.85, "x":0.1}
             background_color: 0, 0, 0, 1
 
         Label:
-            text:"Phone Number:"
-            pos_hint: {"top":0.98, "x":-0.24}
+            text:"Full Name:"
+            pos_hint: {"top":1.24, "x":-0.29}
 
         TextInput:
             multiline: False
             size_hint: 0.8, 0.08
-            pos_hint: {"top":0.45, "x":0.1}
+            pos_hint: {"top":0.719, "x":0.1}
+            id: phone
+
+        Label:
+            text:"Phone Number:"
+            pos_hint: {"top":1.1, "x":-0.24}
+
+        TextInput:
+            multiline: False
+            size_hint: 0.8, 0.08
+            pos_hint: {"top":0.58, "x":0.1}
             id: phone
 
         Label:
             text:"Password:"
-            pos_hint: {"top":0.83, "x":-0.27}
+            pos_hint: {"top":0.965, "x":-0.29}
+
+        TextInput:
+            multiline: False
+            size_hint: 0.8, 0.08
+            pos_hint: {"top":0.44, "x":0.1}
+            id: phone
+
+        Label:
+            text:"Confirm Password:"
+            pos_hint: {"top":0.83, "x":-0.22}
         
         TextInput:
             multiline: False
@@ -237,50 +268,80 @@ WindowManager:
             Button:
                 text: "Crop Scan"
                 background_color: "black"
+                on_release: 
+                    app.root.current = "CropScanPage"
+                    root.manager.transition.direction = "left"
 
             Button:
                 text: "Crop Servicing"
                 background_color: "black"
+                on_release: 
+                    app.root.current = "CropServicingPage"
+                    root.manager.transition.direction = "left"
 
         GridLayout
             cols:2
             Button:
                 text: "Soil Scan"
                 background_color: "black"
+                on_release: 
+                    app.root.current = "SoilScanPage"
+                    root.manager.transition.direction = "left"
 
             Button:
                 text: "Smart Water"
                 background_color: "black"
+                on_release: 
+                    app.root.current = "SmartWaterPage"
+                    root.manager.transition.direction = "left"
 
         GridLayout
             cols:2
             Button:
                 text: "Agro Shop"
                 background_color: "black"
+                on_release: 
+                    app.root.current = "AgroShopPage"
+                    root.manager.transition.direction = "left"
 
             Button:
                 text: "Marketplace"
                 background_color: "black"
+                on_release: 
+                    app.root.current = "MarketPlacePage"
+                    root.manager.transition.direction = "left"
 
         GridLayout
             cols:2
             Button:
                 text: "Farm Security"
                 background_color: "black"
+                on_release: 
+                    app.root.current = "FarmSecurityPage"
+                    root.manager.transition.direction = "left"
 
             Button:
                 text: "Knowledge Center"
                 background_color: "black"
+                on_release: 
+                    app.root.current = "KnowledgeBasePage"
+                    root.manager.transition.direction = "left"
 
         GridLayout
             cols:2
             Button:
                 text: "Animal Scan"
                 background_color: "black"
+                on_release: 
+                    app.root.current = "AnimalScanPage"
+                    root.manager.transition.direction = "left"
 
             Button:
                 text: "Animal Servicing"
                 background_color: "black"
+                on_release: 
+                    app.root.current = "AnimalServicingPage"
+                    root.manager.transition.direction = "left"
 
 
 <ScanCropScreen>:
@@ -311,3 +372,263 @@ WindowManager:
         text: "Diagnose"
         size_hint: 0.5, 0.06
         pos_hint: {"x":0.25, "top":0.1}
+        on_release: 
+            app.root.current = "ScanCropResultsPage"
+            root.manager.transition.direction = "left"
+
+
+
+<ScanCropResultsScreen>:
+    name: "ScanCropResultsPage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "ScanCropPage"
+            root.manager.transition.direction = "right"
+    
+    FloatLayout:
+        # padding:20
+        Label:
+            text: "Problem"
+            size_hint: 0.5, 0.06
+            pos_hint: {"top":0.9}
+            color: "black"
+            font_size:25
+            font_weight: 500
+
+
+
+        Label:
+            text: "Diagnose lorem a dummy text that i often use when I lack content to write or while brainstorming"
+            size_hint: 0.5, 0.06
+            pos_hint: { "top":0.75, "x":0.3}
+            color: "black"
+            multiline: True
+
+<CropScanScreen>:
+    name: "CropScanPage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "DashboardPage"
+            root.manager.transition.direction = "right"
+
+    Label:
+        text: "Crop Scan Page"
+        color: "black"
+ 
+
+<CropServicingScreen>:
+    name: "CropServicingPage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "DashboardPage"
+            root.manager.transition.direction = "right"
+
+    Label:
+        text: "Crop Servicing Page"
+        color: "black"
+
+
+<SoilScanScreen>:
+    name: "SoilScanPage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "DashboardPage"
+            root.manager.transition.direction = "right"
+
+    Label:
+        text: "Soil Scan Page"
+        color: "black"
+
+
+<SmartWaterScreen>:
+    name: "SmartWaterPage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "DashboardPage"
+            root.manager.transition.direction = "right"
+
+    Label:
+        text: "Crop Water Page"
+        color: "black"
+
+
+<AgroShopScreen>:
+    name: "AgroShopPage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "DashboardPage"
+            root.manager.transition.direction = "right"
+
+    Label:
+        text: "Agro Shop Page"
+        color: "black"
+
+
+<MarketPlaceScreen>:
+    name: "MarketPlacePage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "DashboardPage"
+            root.manager.transition.direction = "right"
+
+    Label:
+        text: "Market Place Page"
+        color: "black"
+
+
+<FarmSecurityScreen>:
+    name: "FarmSecurityPage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "DashboardPage"
+            root.manager.transition.direction = "right"
+
+    Label:
+        text: "Farm Security Page"
+        color: "black"
+
+
+<KnowledgeBaseScreen>:
+    name: "KnowledgeBasePage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "DashboardPage"
+            root.manager.transition.direction = "right"
+
+    Label:
+        text: "Knowledge Base Page"
+        color: "black"
+
+
+<AnimalScanScreen>:
+    name: "AnimalScanPage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "DashboardPage"
+            root.manager.transition.direction = "right"
+
+    Label:
+        text: "Animal Scan Page"
+        color: "black"
+
+
+<AnimalServicingScreen>:
+    name: "AnimalServicingPage"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        text: "Go back"
+        size_hint: 0.3, 0.06
+        background_color: "green"
+        pos_hint: {"x":0, "top":1}
+        on_release: 
+            app.root.current = "DashboardPage"
+            root.manager.transition.direction = "right"
+
+    Label:
+        text: "Animal Servicing Page"
+        color: "black"

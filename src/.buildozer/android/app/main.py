@@ -25,6 +25,50 @@ class ScanCropScreen(Screen):
     pass
 
 
+class ScanCropResultsScreen(Screen):
+    pass
+
+
+class CropScanScreen(Screen):
+    pass
+
+
+class CropServicingScreen(Screen):
+    pass
+
+
+class SoilScanScreen(Screen):
+    pass
+
+
+class SmartWaterScreen(Screen):
+    pass
+
+
+class AgroShopScreen(Screen):
+    pass
+
+
+class MarketPlaceScreen(Screen):
+    pass
+
+
+class FarmSecurityScreen(Screen):
+    pass
+
+
+class KnowledgeBaseScreen(Screen):
+    pass
+
+
+class AnimalScanScreen(Screen):
+    pass
+
+
+class AnimalServicingScreen(Screen):
+    pass
+
+
 class WindowManager(ScreenManager):
     pass
 
